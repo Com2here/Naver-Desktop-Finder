@@ -1,0 +1,21 @@
+{
+    "game": "League of Legends",
+    "minimum_requirements": {
+        "CPU": "Intel Core i3-530 / AMD A6-3650",
+        "RAM": "2 GB",
+        "VIDEO CARD": "NVidia GeForce 9600GT / AMD Radeon HD 6570 / Intel HD 4600 Integrated Graphics (DirectX 10)",
+        "PIXEL SHADER": "4.0",
+        "VERTEX SHADER": "4.0",
+        "OS": "Windows 7",
+        "FREE DISK SPACE": "16 GB"
+    },
+    "recommended_requirements": {
+        "CPU": "Intel Core i5-3300 / AMD Ryzen 3 1200",
+        "RAM": "4 GB",
+        "VIDEO CARD": "NVidia GeForce GTX 560 / AMD Radeon HD 6950 / Intel UHD 630 Integrated Graphics (DirectX 11)",
+        "PIXEL SHADER": "5.0",
+        "VERTEX SHADER": "5.0",
+        "OS": "Windows 10 64-Bit",
+        "FREE DISK SPACE": "16 GB"
+    }
+}

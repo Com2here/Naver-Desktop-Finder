@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "리그 오브 레전드",
+    "purpose": "게이밍",
+    "minimum": {
+      "source": "https://support-leagueoflegends.riotgames.com/hc/ko/articles/201752654-%EC%B5%9C%EC%86%8C-%EB%B0%8F-%EA%B6%8C%EC%9E%A5-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%82%AC%EC%96%91-%EB%A6%AC%EA%B7%B8-%EC%98%A4%EB%B8%8C-%EB%A0%88%EC%A0%84%EB%93%9C",
+      "CPU": {
+        "Intel": "Core i5-3300",
+        "AMD": "Ryzen 3 1200",
+        "ARM": "미지원"
+      },
+      "CPUFeatures": ["SSE4"],
+      "GPU": {
+        "NVIDIA": "GeForce 560",
+        "AMD": "Radeon HD 6950",
+        "Intel": "Intel UHD 630 내장 그래픽"
+      },
+      "GPUFeatures": ["DX11 급 하드웨어"],
+      "VRAM": "2GB",
+      "Storage": "16GB SSD",
+      "OS": {
+        "version": "Windows 11",
+        "notes": "TPM 2.0 활성화 필수",
+        "architecture": "x64"
+      },
+      "RAM": "4GB",
+      "GraphicsSetting": "높음",
+      "Resolution": "1920x1080"
+    }
+  },
+  {
+    "id": 2,
+    "name": "FC 온라인",
+    "purpose": "게이밍",
+    "minimum": {
+      "source": "https://fconline.nexon.com/pds/download",
+      "CPU": {
+        "Intel": "i5-2550K @ 3.4GHz",
+        "AMD": "FX-6350 Six-Core equivalent"
+      },
+      "GPU": {
+        "NVIDIA": "GeForce GTX 460",
+        "AMD": "Radeon HD 6870"
+      },
+      "VRAM": "3GB",
+      "Storage": "40GB",
+      "OS": {
+        "version": "Windows 7/8/8.1/10",
+        "architecture": "x64"
+      },
+      "RAM": "8GB",
+      "DirectX": "DirectX 11"
+    }
+  }
+]
