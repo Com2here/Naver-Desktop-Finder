@@ -10,23 +10,23 @@
         "AMD": "Ryzen 3 1200",
         "ARM": "미지원"
       },
-      "CPUFeatures": ["SSE4"],
+      "CPUFeatures": "SSE4",
       "GPU": {
         "NVIDIA": "GeForce 560",
         "AMD": "Radeon HD 6950",
         "Intel": "Intel UHD 630 내장 그래픽"
       },
-      "GPUFeatures": ["DX11 급 하드웨어"],
+      "GPUFeatures": "DX11 급 하드웨어",
       "VRAM": "2GB",
       "Storage": "16GB SSD",
       "OS": {
         "version": "Windows 11",
-        "notes": "TPM 2.0 활성화 필수",
+        "notes": " TPM 2.0 활성화 필수",
         "architecture": "x64"
       },
       "RAM": "4GB",
-      "GraphicsSetting": "높음",
-      "Resolution": "1920x1080"
+      "RecommendedGraphicsSetting": "높음",
+      "RecommendedResolution": "1920x1080"
     }
   },
   {
