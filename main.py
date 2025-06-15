@@ -29,9 +29,9 @@ def update_json(json_path, new_specs, target_id):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 if __name__ == "__main__":
-    league_of_legends = fetch_league_of_legends_specs()
-    update_json(JSON_PATH, league_of_legends, target_id=1)
-    print("✅ [리그 오브 레전드] 시스템 사양 수집 완료:", league_of_legends)
+    # league_of_legends = fetch_league_of_legends_specs()
+    # update_json(JSON_PATH, league_of_legends, target_id=1)
+    # print("✅ [리그 오브 레전드] 시스템 사양 수집 완료:", league_of_legends)
     fc_online = fetch_fc_online_specs()
     update_json(JSON_PATH, fc_online, target_id=2)
     print("✅ [FC 온라인] 시스템 사양 수집 완료:", fc_online)

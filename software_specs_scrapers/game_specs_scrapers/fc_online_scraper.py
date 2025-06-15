@@ -26,29 +26,41 @@ def fetch_fc_online_specs():
         def clean(text):
             return BeautifulSoup(text, 'html.parser').get_text(separator=' ').strip()
 
-        if '운영체제' in key:
+        if key == '운영체제':
+            os_text = clean(min_val)
+
+            # " - " 또는 "(" 기준으로 자르기
+            version_match = re.split(r'\s*[-(]\s*', os_text)
+            version = version_match[0].strip() if version_match else os_text.strip()
+            
+            # 아키텍처 추출 및 정규화
+            if len(version_match) > 1:
+                arch_raw = version_match[1].lower()
+                if '64' in arch_raw:
+                    architecture = "x64"
+                elif '32' in arch_raw:
+                    architecture = "x86"
+
             specs['OS'] = {
-                "version": clean(min_val),
-                "architecture": "x64"
+                "version": version,
+                "architecture": architecture
             }
-        elif 'CPU' in key:
+        elif key == 'CPU':
             specs['CPU'] = {
                 "Intel": "i5-2550K @ 3.4GHz",
                 "AMD": "FX-6350 Six-Core equivalent"
             }
-        elif '메모리' in key:
+        elif key == '메모리':
             specs['RAM'] = clean(rec_val)
-        elif '하드디스크' in key:
+        elif key == '하드디스크 여유공간':
             specs['Storage'] = clean(rec_val)
-        elif '그래픽 카드' in key:
+        elif key == '그래픽 카드':
             specs['GPU'] = {
                 "NVIDIA": "GeForce GTX 460",
                 "AMD": "Radeon HD 6870"
             }
-        elif 'GPU Memory' in key:
+        elif key == 'GPU Memory':
             specs['VRAM'] = clean(rec_val)
         elif 'DirectX' in key:
             specs['DirectX'] = clean(rec_val)
-
-    print("✅ FC 온라인 시스템 사양 수집 완료:", specs)
     return specs
