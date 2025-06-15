@@ -1,5 +1,8 @@
+# source .venv/bin/activate
+
 import json
 from software_specs_scrapers.game_specs_scrapers.league_of_legends_scraper import fetch_league_of_legends_specs
+from software_specs_scrapers.game_specs_scrapers.fc_online_scraper import fetch_fc_online_specs
 
 JSON_PATH = 'software_specs.json'
 
@@ -25,3 +28,5 @@ if __name__ == "__main__":
     league_of_legends = fetch_league_of_legends_specs()
     update_json(JSON_PATH, league_of_legends)
     print("✅ 리그 오브 레전드 시스템 사양 수집 완료:", league_of_legends)
+    fetch_fc_online_specs()
+

@@ -1,9 +1,7 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import time
 import re
+from software_specs_scrapers.utils.driver_util import get_driver
 
 URL = 'https://support-leagueoflegends.riotgames.com/hc/ko/articles/201752654-%EC%B5%9C%EC%86%8C-%EB%B0%8F-%EA%B6%8C%EC%9E%A5-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%82%AC%EC%96%91-%EB%A6%AC%EA%B7%B8-%EC%98%A4%EB%B8%8C-%EB%A0%88%EC%A0%84%EB%93%9C'
 
@@ -18,17 +16,7 @@ def parse_key_value_p_tags(td_tag):
     return result
 
 def fetch_league_of_legends_specs():
-    options = Options()
-    # options.add_argument('--headless')
-    options.add_argument("--window-size=1920,1080")
-    options.add_argument('--disable-gpu')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-
-    # 크롬드라이버 경로를 환경에 맞게 수정하세요
-    service = Service('/opt/homebrew/bin/chromedriver')
-
-    driver = webdriver.Chrome(service=service, options=options)
+    driver = get_driver()
     driver.get(URL)
     time.sleep(5)  # 페이지 로딩 대기 (필요시 조절)
 
