@@ -6,19 +6,23 @@ from software_specs_scrapers.game_specs_scrapers.fc_online_scraper import fetch_
 
 JSON_PATH = 'software_specs.json'
 
-def update_json(json_path, new_specs):
+def update_json(json_path, new_specs, target_id):
     with open(json_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
     for item in data:
-        if item.get('id') == 1:
+        if item.get('id') == target_id:
             minimum = item.get('minimum', {})
 
-            for key, value in new_specs.items():
-                if key in minimum:
-                    minimum[key] = value
+            # 순서 유지용 복사본
+            updated_minimum = {}
+            for key in minimum.keys():
+                if key in new_specs:
+                    updated_minimum[key] = new_specs[key]
                 else:
-                    print(f"⚠️ '{key}'는 기존 minimum에 없어서 추가되지 않음")
+                    updated_minimum[key] = minimum[key]
+
+            item['minimum'] = updated_minimum
             break
 
     with open(json_path, 'w', encoding='utf-8') as f:
@@ -26,7 +30,9 @@ def update_json(json_path, new_specs):
 
 if __name__ == "__main__":
     league_of_legends = fetch_league_of_legends_specs()
-    update_json(JSON_PATH, league_of_legends)
-    print("✅ 리그 오브 레전드 시스템 사양 수집 완료:", league_of_legends)
-    fetch_fc_online_specs()
+    update_json(JSON_PATH, league_of_legends, target_id=1)
+    print("✅ [리그 오브 레전드] 시스템 사양 수집 완료:", league_of_legends)
+    fc_online = fetch_fc_online_specs()
+    update_json(JSON_PATH, fc_online, target_id=2)
+    print("✅ [FC 온라인] 시스템 사양 수집 완료:", fc_online)
 
